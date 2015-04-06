@@ -1,58 +1,63 @@
-<%@ page title="Home Page" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="_Default, App_Web_trnga2hs" %>
+<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_bq0d44re" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-</asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <h2>
-        Welcome to Media Hub!<asp:ScriptManager ID="ScriptManager_HomePage" 
-            runat="server">
-        </asp:ScriptManager>
-    </h2>
-    <p>
-        Our goal at Media Hub is to provide the best quality and most highly demanded 
-        media on the internet in one location.&nbsp; We provide flash games, tv shows, 
-        and even music!&nbsp; We hope that you will enjoy our site as much as we enjoy 
-        running it!</p>
-<p>
-        Don&#39;t forget to check out the different site themes by using the drop down list 
-        in the top right corner!&nbsp; We personally like colorful the most!</p>
-    <p>
-        Check out some of our games!
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp; 
-        Looking for Inspiration? Check out some Vids!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp; 
-        Check out some music!</p>
-    <asp:UpdatePanel ID="UpdatePanel" runat="server">
-        <ContentTemplate>
-            <a href="Games.aspx">
-                <asp:Image ID="ImageSlideShowGames" runat="server" 
-                    ImageUrl="~/Games/Images/balloon-in-a-wasteland.jpg" 
-                    style="float:left;"/>
-            </a>
-            <a href="Videos.aspx">
-            <asp:Image ID="ImageSlideShowVideos" runat="server" 
-                style="float:left; margin-left: 170px;" 
-                ImageUrl="~/Video/Images/AvalancheCliffJump.png"/>
-            </a>
-            <a href="Music.aspx">
-            <asp:Image ID="ImageSlideShowMusic" runat="server"
-                style="float:right;" ImageUrl="~/Music/Acoustic/John Mayer/AlbumArt.jpg" />
-            </a>
-            <asp:Timer ID="ImageTimer" runat="server" Interval="2000" OnTick="CycleImage"> <!-- CYCLE IMAGE EVERY 2 SECONDS -->
-            </asp:Timer>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-        </ContentTemplate>
-    </asp:UpdatePanel>
-</asp:Content>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link id="CurrentStyleSheet" href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    MediaHub
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="greetingLabel" runat="server" 
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: large" 
+                    Text="Welcome, Guest!"></asp:Label>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    DataSourceID="MenuSiteMapDataSource">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login" Value="Login">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" Value="Contact">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Games.aspx" Text="Games" Value="Games">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="SkinMenu" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="SkinMenu_SelectedIndexChanged">
+                    <asp:ListItem>Original</asp:ListItem>
+                    <asp:ListItem>Professional</asp:ListItem>
+                    <asp:ListItem>Colorful</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+        <asp:SiteMapDataSource ID="MenuSiteMapDataSource" runat="server" 
+            ShowStartingNode="False" />
+        
+    </div>
+    </form>
+</body>
+</html>
