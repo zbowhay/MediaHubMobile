@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="Blank"  description="Just here for syntax"><!--Individual Item/DropDown-->
+      <siteMapNode url="Default.aspx" title="Home" description=""><!--Individual Item-->
+      </siteMapNode>
+      <siteMapNode url="About.aspx" title="About"  description=""><!--Individual Item-->
+      </siteMapNode>
+      <siteMapNode url="Login.aspx" title="Login"  description=""><!--Individual Item-->
+      </siteMapNode>
+      <siteMapNode url="Contact.aspx" title="Contact" description=""><!--Individual Item-->
+      </siteMapNode>
+      <siteMapNode url="Games.aspx" title="Games" description=""><!--Individual Item/DropDown-->
+        <siteMapNode url="BalloonInAWasteland.aspx" title="Balloon In A Wasteland" description="" /><!--INDIVIDUAL ITEMS OF LIST-->
+        <siteMapNode url="CrushTheCastle2.aspx" title="Crush The Castle 2" description="" />
+        <siteMapNode url="Flight.aspx" title="Flight" description="" />
+        <siteMapNode url="LootHeroes.aspx" title="Loot Heroes" description="" />
+        <siteMapNode url="MedievalGolf.aspx" title="Medieval Golf" description="" />
+        <siteMapNode url="Warfare1917.aspx" title="Warfare 1917" description="" /><!--INDIVIDUAL ITEMS OF LIST STOP-->
+      </siteMapNode>
+      <siteMapNode url="Videos.aspx" title="Videos" description=""><!--Individual Item/DropDown-->
+        <siteMapNode url="AvalancheCliffJump.aspx" title="Avalanche Cliff Jump" description="" /><!--INDIVIDUAL ITEMS OF LIST-->
+        <siteMapNode url="KayakNZ.aspx" title="Kayak New Zealand" description="" />
+        <siteMapNode url="LostInPeru.aspx" title="Lost In Peru" description="" />
+        <siteMapNode url="MoabTowers.aspx" title="Moab Towers: Base Jump" description="" />
+        <siteMapNode url="PeopleAreAwesome.aspx" title="People Are Awesome 2014" description="" />
+        <siteMapNode url="RedbullRampage.aspx" title="Redbull Rampage 2013" description="" />
+        <siteMapNode url="ToTheMountain.aspx" title="To The Mountain" description="" />
+        <siteMapNode url="WingSuit.aspx" title="Wing Suit Experience" description="" /><!--INDIVIDUAL ITEMS OF LIST STOP-->
+      </siteMapNode>
+      <siteMapNode url="Music.aspx" title="Music" description=""><!--Individual Item/DropDown-->
+        <siteMapNode url="John Mayer.aspx" title="John Mayer" description="" /><!--INDIVIDUAL ITEMS OF LIST-->
+        <siteMapNode url="EdSheeran.aspx" title="Ed Sheeran" description="" />
+        <siteMapNode url="Zedd.aspx" title="Zedd" description="" />
+        <siteMapNode url="KendrickLamar.aspx" title="Kendrick Lamar" description="" />
+        <siteMapNode url="FFDP.aspx" title="Five Finger Death Punch" description="" /><!--INDIVIDUAL ITEMS OF LIST STOP-->
+      </siteMapNode>
+      <siteMapNode url="SiteContent.aspx" title="Site Content"  description=""><!--Individual Item-->
+      </siteMapNode>
+      <!--ADD ADDITIONAL CONTENT HERE-->
+  </siteMapNode>
+</siteMap>

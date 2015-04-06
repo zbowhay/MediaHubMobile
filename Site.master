@@ -1,0 +1,63 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_bq0d44re" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link id="CurrentStyleSheet" href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    MediaHub
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="greetingLabel" runat="server" 
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: large" 
+                    Text="Welcome, Guest!"></asp:Label>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    DataSourceID="MenuSiteMapDataSource">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login" Value="Login">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" Value="Contact">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Games.aspx" Text="Games" Value="Games">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="SkinMenu" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="SkinMenu_SelectedIndexChanged">
+                    <asp:ListItem>Original</asp:ListItem>
+                    <asp:ListItem>Professional</asp:ListItem>
+                    <asp:ListItem>Colorful</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+        <asp:SiteMapDataSource ID="MenuSiteMapDataSource" runat="server" 
+            ShowStartingNode="False" />
+        
+    </div>
+    </form>
+</body>
+</html>
